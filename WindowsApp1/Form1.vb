@@ -17,12 +17,10 @@
         Dim _documentoFinal(100000) As String
         Dim _contAnimacion As Integer
 
-
         _origen = My.Computer.FileSystem.CurrentDirectory
         TextBox2.Text = _origen
         OpenFileDialog1.Filter = "HST Files | *.hst"
         ProgressBar1.Value = 0
-
 
         If (OpenFileDialog1.ShowDialog() = DialogResult.OK) Then
             _filePath = OpenFileDialog1.FileName                'obtener  el path nombre del archivo seleccionado 
@@ -34,7 +32,6 @@
             Dim d As Boolean = copiar(_filePath, _destPath, True)
             'My.Computer.FileSystem.CopyFile(_filePath, _destPath, True)
             TextBox1.Text = _filePath
-
 
             Dim retval As Long = Shell("cmd.exe /c hst2txt " + _destPath, AppWinStyle.NormalFocus, True) 'Ejecucion de shell sincrono
 
@@ -196,8 +193,6 @@
         End While
         Return Documento
 
-
-
     End Function
 
     Public Function ObtenerHora(ByVal a As String, sel As Char) As String
@@ -216,7 +211,6 @@
                 hora = "Error"
 
         End Select
-
 
         Return hora
 
@@ -264,7 +258,6 @@
         Else
             MsgBox("No hay directorio seleccionado")
         End If
-
 
     End Sub
 End Class
